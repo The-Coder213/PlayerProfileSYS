@@ -1,22 +1,29 @@
 # PlayerProfile System
 
-A modular **Player Profile system** for Roblox games, built in **Luau**, designed to handle player stats, DataStores, and autosaving.  
-
-This system supports server-authoritative logic, clean OOP patterns, and can be easily extended for gameplay features like currencies, inventory, and levels.
-
----
+A scalable, server-authoritative Roblox player data system with
+versioned DataStore migration, stat events, and autosaving.
 
 ## Features
-
-- Player profile creation and management  
-- Stats tracking (`Coins`, `Gems`, `Level`, etc.)  
-- AutoSave with customizable delay  
-- DataStore versioning and migration  
-- Bindable events for stat changes and profile events  
-- Optional leaderstats integration (commented in code)  
-- Server-authoritative and exploit-resistant  
-
----
+- Server-only data handling
+- Versioned profile migration
+- Autosave support
+- Stat change events
+- Clean OOP design
 
 ## Folder Structure
+src/
+  server/
+    PlayerProfile.lua
+    Settings.lua
+    ProfileTemplate.lua
+    run.server.lua
 
+## Usage
+1. Install with Rojo
+2. Require `PlayerProfile`
+3. Call `PlayerProfile.Start()`
+
+## Example
+```lua
+local PlayerProfile = require(ServerScriptService.PlayerProfile)
+PlayerProfile.Start()
